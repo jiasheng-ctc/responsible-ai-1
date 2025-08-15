@@ -1,0 +1,4 @@
+dash==2.18.2
+dash-bootstrap-components==1.7.1
+openai==1.60.2
+gunicorn==21.2.0

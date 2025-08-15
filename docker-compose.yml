@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  ai-security-challenge:
+    build: .
+    ports:
+      - "8050:8050"
+    volumes:
+      - ./assets:/app/assets
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: unless-stopped
+    container_name: ai-security-challenge
+    environment:
+      - PYTHONUNBUFFERED=1

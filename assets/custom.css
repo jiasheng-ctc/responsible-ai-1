@@ -1,0 +1,219 @@
+
+    /* Game header with centered content */
+    .game-header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 15px;
+        margin-bottom: 2rem;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    .header-content {
+        text-align: center;
+        width: 100%;
+    }
+
+    /* Logo styling */
+    .logo-image {
+        max-height: 90px;
+        width: auto;
+        transition: all 0.3s ease;
+    }
+
+    .logo-image:hover {
+        transform: scale(1.1);
+        filter: brightness(0) invert(1) drop-shadow(0 0 10px rgba(255,255,255,0.5)) !important;
+    }
+
+    /* Challenge cards with enhanced hover effects */
+    .challenge-card {
+        background: rgba(255,255,255,0.05);
+        border: 2px solid rgba(255,255,255,0.1);
+        border-radius: 15px;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        backdrop-filter: blur(10px);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .challenge-card:hover {
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        border-color: rgba(255,255,255,0.4);
+    }
+
+    .challenge-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+        transition: left 0.5s;
+    }
+
+    .challenge-card:hover::before {
+        left: 100%;
+    }
+
+    /* Enhanced threat level styling */
+    .threat-level-HIGH { 
+        color: #ff4757 !important; 
+        text-shadow: 0 0 8px rgba(255, 71, 87, 0.5);
+    }
+    .threat-level-MEDIUM { 
+        color: #ffa502 !important; 
+        text-shadow: 0 0 8px rgba(255, 165, 2, 0.5);
+    }
+    .threat-level-LOW { 
+        color: #2ed573 !important; 
+        text-shadow: 0 0 8px rgba(46, 213, 115, 0.5);
+    }
+    .threat-level-CRITICAL { 
+        color: #ff3838 !important; 
+        background: rgba(255,56,56,0.15);
+        padding: 0.2rem 0.5rem;
+        border-radius: 4px;
+        text-shadow: 0 0 10px rgba(255, 56, 56, 0.8);
+        animation: critical-pulse 1.5s infinite;
+    }
+
+    @keyframes critical-pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.7; background: rgba(255,56,56,0.25); }
+    }
+
+    /* Gaming font with better readability */
+    .gaming-font {
+        font-family: 'Orbitron', monospace;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+    }
+
+    /* Enhanced pulse animation */
+    .pulse-animation {
+        animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+        0% { opacity: 1; transform: scale(1); }
+        50% { opacity: 0.7; transform: scale(1.05); }
+        100% { opacity: 1; transform: scale(1); }
+    }
+
+    /* Enhanced result cards */
+    .result-card {
+        border-left: 5px solid;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+        position: relative;
+    }
+
+    .result-card:hover {
+        transform: translateX(5px);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .result-success { 
+        border-left-color: #2ed573; 
+        background: linear-gradient(90deg, rgba(46, 213, 115, 0.1), transparent);
+    }
+    .result-danger { 
+        border-left-color: #ff4757; 
+        background: linear-gradient(90deg, rgba(255, 71, 87, 0.1), transparent);
+    }
+    .result-warning { 
+        border-left-color: #ffa502; 
+        background: linear-gradient(90deg, rgba(255, 165, 2, 0.1), transparent);
+    }
+
+    /* Custom input styling */
+    .custom-textarea {
+        background: rgba(255,255,255,0.08) !important;
+        border: 2px solid rgba(255,255,255,0.2) !important;
+        border-radius: 10px !important;
+        color: white !important;
+        transition: all 0.3s ease !important;
+    }
+
+    .custom-textarea:focus {
+        background: rgba(255,255,255,0.12) !important;
+        border-color: #667eea !important;
+        box-shadow: 0 0 20px rgba(102, 126, 234, 0.3) !important;
+        outline: none !important;
+    }
+
+    /* Button enhancements */
+    .btn-primary {
+        background: linear-gradient(45deg, #667eea, #764ba2);
+        border: none;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        background: linear-gradient(45deg, #764ba2, #667eea);
+    }
+
+    .btn-primary::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        background: rgba(255,255,255,0.2);
+        border-radius: 50%;
+        transition: all 0.3s ease;
+        transform: translate(-50%, -50%);
+    }
+
+    .btn-primary:hover::before {
+        width: 300px;
+        height: 300px;
+    }
+
+    /* Improved scrollbar for technical details */
+    .technical-details::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    .technical-details::-webkit-scrollbar-track {
+        background: rgba(255,255,255,0.1);
+        border-radius: 4px;
+    }
+
+    .technical-details::-webkit-scrollbar-thumb {
+        background: rgba(102, 126, 234, 0.6);
+        border-radius: 4px;
+    }
+
+    .technical-details::-webkit-scrollbar-thumb:hover {
+        background: rgba(102, 126, 234, 0.8);
+    }
+
+    /* Status badge improvements */
+    .status-badge {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .status-badge::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+        transition: left 0.5s;
+    }
+
+    .status-badge:hover::before {
+        left: 100%;
+    }
+    
